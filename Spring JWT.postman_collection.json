@@ -1,0 +1,599 @@
+{
+	"info": {
+		"_postman_id": "63865015-eac8-4400-b6b4-4f11bf174c99",
+		"name": "Spring JWT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21528699"
+	},
+	"item": [
+		{
+			"name": "/user/auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"semih@mail.com\",\r\n    \"password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/user/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"user",
+						"auth"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/user/auth",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"semih@mail.com\",\r\n    \"password\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/user/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"user",
+								"auth"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 12 Apr 2023 22:57:44 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"jwt\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzZW1paEBtYWlsLmNvbSIsImV4cCI6MTY4MTUyMDI2NCwiaWF0IjoxNjgxMzQwMjY0fQ.8Pxs8Ay1NhVJsvK_HiSJ8GVewgxSSNiAy142wWszedw\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/user/register",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYWtraUBtYWlsLmNvbSIsImV4cCI6MTY4MTQ5MTEwMCwiaWF0IjoxNjgxMzExMTAwfQ.tnGv9ejhqcOiXLLyPErxaoapGIhWH-8bXUvEljSzkdU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"Semih\",\r\n    \"lastName\":\"Tekin\",\r\n    \"email\":\"semih@mail.com\",\r\n    \"password\":\"12345\",\r\n    \"enabled\":true,\r\n    \"tokenExpired\":true,\r\n    \"roles\":[\r\n        {\"id\":1, \"name\":\"ROLE_manager\"}\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/user/register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Semih\",\r\n    \"lastName\":\"Tekin\",\r\n    \"email\":\"semih@mail.com\",\r\n    \"password\":\"12345\",\r\n    \"enabled\":true,\r\n    \"tokenExpired\":true,\r\n    \"roles\":[\r\n        {\"id\":1, \"name\":\"ROLE_manager\"}\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 12 Apr 2023 22:57:02 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"result\": {\n        \"id\": 1,\n        \"firstName\": \"Semih\",\n        \"lastName\": \"Tekin\",\n        \"email\": \"semih@mail.com\",\n        \"password\": \"$2a$10$ds6SzFDOfcusMU6Sz89VRON3251B8FkfZGpG1Vt4D0h1m02IM.qAy\",\n        \"enabled\": true,\n        \"tokenExpired\": true,\n        \"roles\": [\n            {\n                \"id\": 1,\n                \"name\": \"ROLE_manager\",\n                \"users\": null\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/teacher/enterGrade",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXRoQG1haWwuY29tIiwiZXhwIjoxNjgxNTIxNTE3LCJpYXQiOjE2ODEzNDE1MTd9.H_YkMVz_Cf5ylwl5abAH7FkB6iNgzbkBgvLxZw4KQvw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":6,\r\n    \"examGrade\":68\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/teacher/enterGrade",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"teacher",
+						"enterGrade"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/teacher/enterGrade",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":11,\r\n    \"examName\":\"HISTORY_EXAM\",\r\n    \"examGrade\":93\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/teacher/enterGrade",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"teacher",
+								"enterGrade"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Apr 2023 01:02:14 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"result\": [\n        {\n            \"grade_id\": 24,\n            \"id\": 11,\n            \"exam_name\": \"HISTORY_EXAM\",\n            \"first_name\": \"Mustafa\",\n            \"last_name\": \"Katlan\",\n            \"exam_grade\": 93\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "/student/listGrades/5",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtdXJhdEBtYWlsLmNvbSIsImV4cCI6MTY4MTUxMTI3NywiaWF0IjoxNjgxMzMxMjc3fQ.Ytxar91-D7nqbksj3i_l7bxHqV7GjHUHJ0VLPiIeY5A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/student/listGrades/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"student",
+						"listGrades",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/student/listGrades/5",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/student/listGrades/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"student",
+								"listGrades",
+								"11"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Apr 2023 01:02:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"result\": [\n        {\n            \"grade_id\": 21,\n            \"id\": 11,\n            \"exam_name\": \"MATH_EXAM\",\n            \"first_name\": \"Mustafa\",\n            \"last_name\": \"Katlan\",\n            \"exam_grade\": 93\n        },\n        {\n            \"grade_id\": 22,\n            \"id\": 11,\n            \"exam_name\": \"LITERATURE_EXAM\",\n            \"first_name\": \"Mustafa\",\n            \"last_name\": \"Katlan\",\n            \"exam_grade\": 80\n        },\n        {\n            \"grade_id\": 23,\n            \"id\": 11,\n            \"exam_name\": \"SCIENCE_EXAM\",\n            \"first_name\": \"Mustafa\",\n            \"last_name\": \"Katlan\",\n            \"exam_grade\": 95\n        },\n        {\n            \"grade_id\": 24,\n            \"id\": 11,\n            \"exam_name\": \"HISTORY_EXAM\",\n            \"first_name\": \"Mustafa\",\n            \"last_name\": \"Katlan\",\n            \"exam_grade\": 93\n        }\n    ],\n    \"avarage\": 90,\n    \"passedOrFailed\": \"Passed! Successful!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/parent/listGrades/5",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5dXN1ZkBtYWlsLmNvbSIsImV4cCI6MTY4MTUxMzM2NSwiaWF0IjoxNjgxMzMzMzY1fQ.5lMG0xdA6G-nO0HoAqXQ5vx3aRyVqjhg-jyDI4yKj_I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/parent/listGrades/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"parent",
+						"listGrades",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/parent/listGrades/5",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/parent/listGrades/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"parent",
+								"listGrades",
+								"6"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Apr 2023 01:08:14 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"result\": [\n        {\n            \"grade_id\": 1,\n            \"id\": 6,\n            \"exam_name\": \"MATH_EXAM\",\n            \"first_name\": \"Sinan\",\n            \"last_name\": \"Tekin\",\n            \"exam_grade\": 35\n        },\n        {\n            \"grade_id\": 2,\n            \"id\": 6,\n            \"exam_name\": \"LITERATURE_EXAM\",\n            \"first_name\": \"Sinan\",\n            \"last_name\": \"Tekin\",\n            \"exam_grade\": 68\n        },\n        {\n            \"grade_id\": 3,\n            \"id\": 6,\n            \"exam_name\": \"SCIENCE_EXAM\",\n            \"first_name\": \"Sinan\",\n            \"last_name\": \"Tekin\",\n            \"exam_grade\": 53\n        },\n        {\n            \"grade_id\": 4,\n            \"id\": 6,\n            \"exam_name\": \"HISTORY_EXAM\",\n            \"first_name\": \"Sinan\",\n            \"last_name\": \"Tekin\",\n            \"exam_grade\": 88\n        }\n    ],\n    \"avarage\": 61,\n    \"passedOrFailed\": \"Passed! Successful!\"\n}"
+				}
+			]
+		}
+	]
+}
